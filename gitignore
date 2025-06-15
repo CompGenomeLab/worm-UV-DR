@@ -1,0 +1,28 @@
+# Output directories
+output/
+simulation/
+*.rda
+*.pdf
+*.log
+*.out
+*.err
+
+# Intermediate data
+*.bam
+*.sam
+*.bed
+*.bw
+*.npy
+*.txt
+
+# Raw reads
+*.fastq
+*.fq
+*.fastq.gz
+*.sra
+
+# System files
+.DS_Store
+__pycache__/
+.Rhistory
+*.swp
