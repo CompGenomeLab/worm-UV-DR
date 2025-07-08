@@ -12,9 +12,11 @@ This repository provides a complete and modular pipeline for analyzing DNA damag
 | `xrseqdata/`       | Complete XR-seq processing and normalization pipeline | [README_XRseq.md](xrseqdata/README_XRseq.md) |
 | `damageseqdata/`   | Full Damage-seq processing including adapter trimming, filtering, and QC | [README_damage_seq_pipeline.md](damageseqdata/README_damage_seq_pipeline.md) |
 | `atacseqdata/`     | ATAC-seq peak reprocessing and binning by genic/intergenic regions or expression | [README_atacseq.md](atacseqdata/README_atacseq.md) |
+| `atacseqrawdata/`  | ATAC-seq peak calling and calling dyad centers via nucleoATAC | [README_atacseq_raw.md](atacseqrawdata/README_atacseq.md) |
 | `epigenome/`       | ChIP-seq raw processing, peak calling, and binned region generation | [README_epigenome.md](epigenome/README_epigenome.md) |
 | `RNAseqdata/`      | RNA-seq processing, TPM filtering, expression quartile assignment | [README_rnaseq.md](RNAseqdata/README_rnaseq.md) |
 | `intersect/`       | `bedtools intersect` scripts for combining Damage/XR-seq data with genomic features | [README_intersect.md](intersect/README_intersect.md) |
+| `nucleosomeplots/`| Intersection to ATAC-seq peaks and dyad positions, power spectrum, snr and final visualization scripts (Python) | [README_nucleosomeplots.md](nucleosomeplots/README_nucleosomeplots.md) |
 | `plots/`           | Final visualization scripts (R and Python) for strand bias, TSS metaprofiles, clustering | [README_plots.md](plots/README_plots.md) |
 
 ---
@@ -46,5 +48,6 @@ git push -u origin main
 ## 👩‍🔬 Author
 
 Cansu Kose, 2025 – UNC Chapel Hill | Sancar Lab
+Cem Azgari, 2025 – Sabancı University | Adebali Lab
 
-If you use or adapt this pipeline, please cite appropriately or contact me via GitHub.
+If you use or adapt this pipeline, please cite appropriately or contact us via GitHub.

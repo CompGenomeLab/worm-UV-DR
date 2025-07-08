@@ -6,12 +6,13 @@ This repository contains a modular pipeline for processing and analyzing XR-seq 
 
 ```
 xrseq_pipeline/
-├── XR_Seq.sh                    # Main XR-seq processing pipeline (adapter trim → BAM/BED → filtering)
+├── XR_Seq.sh                   # Main XR-seq processing pipeline (adapter trim → BAM/BED → filtering)
 ├── fordinucleotide.sh          # Script to generate fasta and count dinucleotide composition
 ├── bw.sh                       # Script to generate strand-separated simulation-normalized bigWig files
 ├── fa2kmerAbundanceTable.py    # k-mer abundance calculator
 ├── fasta.py                    # FASTA parsing utilities
 ├── sequence.py                 # Sequence filtering for dipyrimidine reads
+├── exact_dam_site.py           # Locating the exact damage site in 2bp resolution 
 ├── plot_dinucleotide.R         # Dinucleotide positional enrichment barplot script
 ├── plot_monomer_rld.R          # Monomer frequency and read-length distribution plot
 ```
@@ -36,6 +37,7 @@ xrseq_pipeline/
   - Length filtering to retain reads [21–28 nt]
   - FASTA extraction from BED (bedtools)
   - Read count and length distribution generation
+
 
 ### 2. Dinucleotide Enrichment Analysis
 
@@ -69,6 +71,20 @@ Generates plus- and minus-strand bigWig files normalized to RPM:
 - Removes mitochondrial DNA
 - Uses `bedtools genomecov` and `bedGraphToBigWig`
 
+
+### 5. Locating the exact damage site in 2bp resolution 
+
+Run:
+```bash
+python3 exact_dam_site.py \
+  --input merged_bed \
+  --output merged_bed_exact_dam_site
+```
+- Used only for nucleosome occupancy and dyad-centered analyses (Figure 5g,h and 6a,b)
+- Both input and output should be directories.
+- Inside `merged_bed` directory, stranded bed files and their simulations should be stored (see Notes below).
+
+
 ## Output Files
 
 - `*_filtered.bed`: final XR-seq reads, 21–28 nt
@@ -90,4 +106,5 @@ Generates plus- and minus-strand bigWig files normalized to RPM:
 ## Author
 
 Cansu Kose, 2025 – UNC Chapel Hill | Sancar Lab
+Cem Azgari, 2025 – Sabancı University | Adebali Lab
 
