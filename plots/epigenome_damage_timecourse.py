@@ -59,7 +59,7 @@ def load_stranded_bed(tp, damage, mark, sim=False):
     df_minus = pd.read_csv(f_minus, sep="\t", header=None)
 
     # Flip bin numbers for minus strand so that both strands are 5' to 3'
-    df_minus[4] = NUM_BINS + 1 - df_minus[4]
+    df_plus[4] = NUM_BINS + 1 - df_plus[4]
 
     return pd.concat([df_plus, df_minus], ignore_index=True)
 
