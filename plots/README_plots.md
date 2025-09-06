@@ -13,6 +13,8 @@ This directory contains all final visualization scripts used in the DNA repair a
 | `TSNTSviolin_expression_quartiles.R` | Violin plots comparing TS vs NTS strand RPKM across quartiles |
 | `timecoursetstototalreadsratio_xr_expressionquartiles.R` | XR-seq TS/(TS+NTS) ratio across timepoints and expression quartiles |
 | `spearmancorr2kbwindowhclust.R` | Spearman correlation + hierarchical clustering heatmap from 2kb RPKM/RPM matrices |
+| `boxplot_epigenome_XR.R` | XR-seq signals stratified by histone-mark tertiles (2 kb bins; simulation-normalized; all strains) |
+| `boxplot_epigenome_Damage.R` | Damage-seq signals stratified by histone-mark tertiles (2 kb bins; simulation-normalized; wt only) |
 
 ---
 
@@ -67,8 +69,6 @@ All plots are saved as `.pdf` files in their respective `../output/.../` folders
 
 ---
 
-
 ## Author
 
 Cansu Kose, 2025 – UNC Chapel Hill | Sancar Lab
-
